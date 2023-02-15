@@ -13,7 +13,7 @@ func main() {
 	uri := os.Args[1]
 	username := os.Args[2]
 	password := os.Args[3]
-	
+
 	db := neo4jtester.NewNeo4jDatabase(uri, username, password)
 
 	err := db.CreateMoviesDataSet(context.Background())

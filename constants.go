@@ -1,5 +1,6 @@
 package neo4jtester
 
+var EVALUATION_LICENSE_CYPHER = `CALL dbms.acceptedLicenseAgreement();`
 var MOVIES_CYPHER = `
 CREATE (TheMatrix:Movie {title:'The Matrix', released:1999, tagline:'Welcome to the Real World'})
 CREATE (Keanu:Person {name:'Keanu Reeves', born:1964})

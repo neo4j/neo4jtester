@@ -13,6 +13,7 @@ func main() {
 	uri := os.Args[1]
 	username := os.Args[2]
 	password := os.Args[3]
+	licenseType := os.Args[4]
 
 	db := neo4jtester.NewNeo4jDatabase(uri, username, password)
 
@@ -28,11 +29,19 @@ func main() {
 		os.Exit(1)
 	}
 
+	if licenseType == "Evaluation" {
+		err = db.CheckEvaluationLicense(context.Background())
+		if err != nil {
+			fmt.Println("failed while verifying evaluation license type %v", err)
+			os.Exit(1)
+		}
+	}
+
 }
 
 func checkArguments() {
-	if len(os.Args) != 4 {
-		fmt.Println("Please provide uri , username and password. (3 command line arguments expected)")
+	if len(os.Args) != 5 {
+		fmt.Println("Please provide uri , username, password and license type. (4 command line arguments expected)")
 		os.Exit(1)
 	}
 }

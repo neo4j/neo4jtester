@@ -16,7 +16,7 @@ func main() {
 	licenseType := os.Args[4]
 
 	db := neo4jtester.NewNeo4jDatabase(uri, username, password)
-
+	
 	err := db.CreateMoviesDataSet(context.Background())
 	if err != nil {
 		fmt.Println("error seen while creating movies dataset %v", err)

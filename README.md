@@ -1,11 +1,12 @@
 # neo4jtester
 
 This is a Go application written to execute tests on Neo4j Database.
-It expects three arguments:
+It expects four arguments:
 
     Neo4j URI <neo4j://<>:7687)
     Username
     Password
+    License Type (Evaluation/Enterprise)
 
 The tests it performs so far are:
 
